@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Photo" representedClassName=".Photo" syncable="YES">
         <attribute name="creationDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="image" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="imageData" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
     </entity>
     <elements>
         <element name="Photo" positionX="-63" positionY="-18" width="128" height="75"/>

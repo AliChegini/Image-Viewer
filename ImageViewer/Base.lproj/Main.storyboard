@@ -51,6 +51,7 @@
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="photoView" destination="MVa-zC-hyT" id="pqr-aS-vV9"/>
+                                                    <segue destination="HEO-vr-njV" kind="show" identifier="showPhoto" id="0K6-Sg-NjI"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -97,6 +98,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
+        </scene>
+        <!--Photo Page Controller-->
+        <scene sceneID="wj6-fQ-O8o">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="HEO-vr-njV" customClass="PhotoPageController" customModule="ImageViewer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXx-cW-7PO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308" y="137"/>
+        </scene>
+        <!--Photo Viewer Controller-->
+        <scene sceneID="kZg-oh-eAh">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewerController" id="sYF-Ae-o5b" customClass="PhotoViewerController" customModule="ImageViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Wl-HR-ykd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TJp-cP-lRQ">
+                                <rect key="frame" x="0.0" y="193" width="375" height="281"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TJp-cP-lRQ" secondAttribute="height" multiplier="4:3" id="sNC-Ch-yzs"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TJp-cP-lRQ" secondAttribute="trailing" id="JbW-bh-N0M"/>
+                            <constraint firstItem="TJp-cP-lRQ" firstAttribute="leading" secondItem="2Wl-HR-ykd" secondAttribute="leading" id="iE8-kw-tti"/>
+                            <constraint firstItem="TJp-cP-lRQ" firstAttribute="centerY" secondItem="2Wl-HR-ykd" secondAttribute="centerY" id="ibh-Ax-EnP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4RY-6d-KJZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="TJp-cP-lRQ" id="m61-uN-RUs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCF-J3-qne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2114" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CWY-Rs-SNv">

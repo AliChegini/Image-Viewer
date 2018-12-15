@@ -37,11 +37,22 @@ final class PhotoListController: UIViewController {
         photoPickerManager.presentPhotoPicker(animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhoto" {
+            if let cell = sender as? UICollectionViewCell, let indexPath = photosCollectionView.indexPath(for: cell), let pageViewController = segue.destination as? PhotoPageController {
+                
+                pageViewController.photo = dataSource.photos[indexPath.row]
+            }
+        }
+    }
+    
 }
 
 
 extension PhotoListController: PhotoPickerManagerDelegate {
     func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
+        let _ = Photo.with(image, in: context)
+        context.saveChanges()
         manager.dismissPhotoPicker(animated: true, completion: nil)
     }
 }
